@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html>
+<head><title>Evenimente</title>
+</head>
+
+<script>
+function urmatorul(elment,text) {
+if (text.length==elment.maxLength) {
+next=elment.tabIndex;
+if (next<document.form3.elements.length) {
+document.form3.elements[next].focus();
+}
+}
+}
+</script>
+</head>
+
+<body>
+- Cursorul se muta automat in urmatoarea caseta atunci cand s-a completat tot campul
+precedent (cand se ajunge la lungimea stabilita a campului, aici 4 caractere) <br>
+<form name="form3">
+<input size="4" tabindex="1" name="field" maxlength="4" onkeyup="urmatorul(this,this.value)">
+<input size="4" tabindex="2" maxlength="4" onkeyup="urmatorul(this,this.value)">
+<input size="4" tabindex="4" maxlength="4" onkeyup="urmatorul(this,this.value)">
+</form>
+</body>
+</html>

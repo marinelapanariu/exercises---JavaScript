@@ -1,0 +1,16 @@
+<h4>Exemplu querySelector()</h4>
+<ul>
+ <li>CoursesWeb.net</li>
+ <li class='aclass'>MarPlo.net</li>
+ <li class='aclass'>GamV.eu</li>
+</ul>
+<p style='background:#fbfbb0;'>La clic pe urmatorul buton (preluat cu querySelector) se afiseaza la #resp continutul din primul LI cu class='aclass'.</p>
+<button id='btn1'>Click</button>
+<blockquote id='resp'>#resp</blockquote>
+
+<script>
+var btn = document.querySelector('#btn1');
+btn.addEventListener('click', (ev)=>{
+ document.getElementById('resp').innerHTML = document.querySelector('li.aclass').innerHTML;
+});
+</script>

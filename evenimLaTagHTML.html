@@ -1,0 +1,32 @@
+<h4>Exemplu DOMContentLoaded</h4>
+
+<p>- Dupa incarcarea documentului HTML se preia un element Input si tag-urile LI din pagina si inregistreaza click la fiecare.<br>
+La clic pe oricare din listele de mai jos, se va adauga in caseta input textul din el.</p>
+Input Text: <input type='text' id='inp1' readonly/>
+<ul>
+<li>Pacea-i Buna.</li>
+<li>Iertarea Fericeste.</li>
+<li>Iubirea-i Sfanta</li>
+</ul>
+
+<script>
+var inp1; //va contine elementul #inp1
+
+//functie apelata la DOMContentLoaded
+function liClick(){
+ inp1 = document.getElementById('inp1'); //caseta de text #inp1
+
+ //array cu tag-urile LI
+ var elms = document.getElementsByTagName('li');
+
+ // Parcurge array-ul cu tag-urile si inregistreaza click la fiecare
+ for(var i=0; i<elms.length; i++){
+ elms[i].addEventListener('click', (ev)=>{
+ inp1.value = ev.target.textContent;
+ });
+ }
+}
+
+//dupa ce se incarca documentul HTML in DOM, apeleaza functia liClick()
+document.addEventListener('DOMContentLoaded', liClick);
+</script>

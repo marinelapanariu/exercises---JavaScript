@@ -1,0 +1,23 @@
+<h4>Exemplu sterge detectare eveniment cu addEventListener()</h4>
+<p>Cand mouse-ul e miscat pe urmatorul Div, se afiseaza numarul de emiteri a evenimentului 'mousemove'<br>
+Cand contoarul ajnge la 12 se anuleaza detectarea acestui eveniment.</p>
+<div id='dvid' style='background:#a8eda9; padding:8px; 12px; text-align:center; width:130px'>
+Div - Miscati cursorul aici.<br>
+<strong id='resp'>0</strong>
+</div>
+
+<script>
+var elm = document.getElementById('dvid');
+var resp = document.getElementById('resp');
+var nre =0;
+
+//apelata la mousemove
+function mOver(ev){
+ nre++;
+ resp.innerHTML = nre;
+ if(nre ==12) elm.removeEventListener('mousemove', mOver); // sterge inregistrarea evenimentului
+}
+
+// inregistrare mousemove
+elm.addEventListener('mousemove', mOver);
+</script>

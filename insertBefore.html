@@ -1,0 +1,22 @@
+<h4>Exemplu cu insertBefore()</h4>
+<p>La click pe urmatorul buton, va fi adaugat un tag H3 creat cu createElement(), inaintea unui DIV cu id='rpr'.</p>
+<button id='btn1'>Add H3</button>
+<div id='rpr'>#rpr, elementul de reper.</div>
+
+<script>
+// Functia ce creaza noul element si-l adauga inaintea unui cadru cu id='rpr'
+function add_h3(){
+ // Creaza noul element H3 si ii adauga o clasa si continut
+ var elm = document.createElement('h3');
+ elm.className ='o_clasa';
+ elm.innerHTML = 'Textul din eticheta H3 creata dinamic';
+
+ // Creaza obiectul cu elementul de reper (Adaugati-i si valoarea null pentru a vedea diferenta)
+ var reper = document.getElementById('rpr');
+
+ // Adauga elementul nou inaintea celui de reper (Parinte este body)
+ document.body.insertBefore(elm, reper);
+}
+
+document.getElementById('btn1').addEventListener('click', add_h3);
+</script>

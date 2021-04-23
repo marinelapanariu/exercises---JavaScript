@@ -1,0 +1,29 @@
+<h4>Exemplu createElement() si insertBefore()</h4>
+<p>La clic pe butonul 'Adauga caseta' se adauga automat cate o casete de text in formular.</p>
+
+<form action='#'>
+Text: <input type='text' name='nume[]' />
+<input type='submit' value='Submit' id='submit' /><br><br>
+<input type='button' id='btn1' value='Adauga caseta' />
+</form>
+
+<script>
+// Functia creaza elementul input si-l adauga inaintea butonului Submit
+function add_input(){
+ // Seteaza noul element input, cu atributul type=text si name=nume[]
+ var elm = document.createElement('input');
+ elm.setAttribute('type', 'text');
+ elm.setAttribute('name', 'nume[]');
+ elm.style.display = 'block'; // Seteaza display:block; pt. a afisa casutele unele sub altele
+
+ // Seteaza obiectele cu elementul de reper (Submit) si cadru parinte
+ var reper = document.getElementById('submit');
+ var parinte = reper.parentNode;
+
+ // Adauga elementul nou inaintea celui de reper
+ parinte.insertBefore(elm, reper);
+}
+
+//la click pe #btn1 apeleaza add_input()
+document.getElementById('btn1').addEventListener('click', add_input);
+</script>

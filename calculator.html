@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html>
+<title>Exemplu de formular</title>
+<style>
+body {
+background-color: #B3FFB3;
+}
+.titlul { font-family: "Aldine721 Lt BT", Adolescence, "Alexei Copperplate";
+font-size: 18px;
+font-weight: bolder;
+color: #006600;
+}
+</style>
+<script>
+function PornireCalculare()
+{
+interval = setInterval("Calculare()",1);
+}
+function Calculare()
+{
+primul = document.adunare.x1.value;
+alDoilea = document.adunare.x2.value;
+document.adunare.x3.value = (primul * 1) + (alDoilea * 1);
+}
+function Oprire()
+{
+clearInterval(interval);
+}
+</script>
+</head>
+<body>
+<p class="titlul">Introduceti numere, pentru a le aduna
+</p><br />
+<form name="adunare">
+<input type=text name="x1" value="" onFocus="PornireCalculare();" onBlur="Oprire();" size="10"> +
+<input type=text name="x2" value="" onFocus="PornireCalculare();" onBlur="Oprire();" size="10"> =
+<input type=text name="x3" size="10">
+</form>
+</body>
+</html>

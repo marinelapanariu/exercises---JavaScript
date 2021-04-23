@@ -1,0 +1,30 @@
+<h4>Exemplu getElementsByTagName() la getElementById()</h4>
+<ul id='ul1'>
+ <li>ul1 - Vine urmatorul.</li>
+ <li>ul1 - Am venit degeaba.</li>
+</ul>
+<ul id='ul2'>
+ <li>ul2 - Eu sunt cel ce vine,</li>
+ <li>ul2 - La mine.</li>
+</ul>
+<p>- La clic pe butonul de mai jos se vor aplica stilurile CSS: 'color' si 'text-decoration' la tag-urile LI din elementul cu id 'ul2'.</p>
+<button id='btn1'>Style Li</button>
+
+<script>
+function adStyle(id, tag){
+ //array cu tag-urile 'tag' din elementul cu id-ul 'id'
+ var elms = document.getElementById(id).getElementsByTagName(tag);
+
+ // Parcurge array-ul cu tag-urile
+ for(var i=0; i<elms.length; i++){
+ //aplica proprietati de stil
+ elms[i].style.color ='blue';
+ elms[i].style.textDecoration ='underline';
+ }
+}
+
+//la click pe #btn1 se apeleaza functia adStyle() cu argumentele pt id si tag
+document.getElementById('btn1').addEventListener('click', (ev)=>{
+ adStyle('ul2', 'li');
+});
+</script>

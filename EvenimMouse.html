@@ -1,0 +1,25 @@
+<!-- 
+Evenimentul onMouseOver va spune browserului că, în momentul în care mouse-ul trece peste imagine, trebuie apelată o funcţie care să schimbe imaginea. 
+Evenimentul onMouseOut va spune browserului că, atunci când mouse-ul se îndepărtează de imagine, trebuie apelată o funcţie care va afişa din nou imaginea iniţială.
+ -->
+ <html>=
+<head>
+<script type="text/javascript">
+function mouseOver()
+{
+document.getElementById("m1").src ="img1.gif";
+}
+function mouseOut()
+{
+document.getElementById("m1").src ="img2.gif";
+}
+</script>
+</head>
+<body>
+<a href="http://www.google.com" target="_blank">
+<img border="0" alt="Vizitati Google!" src="img2.gif"
+id="b1"
+onmouseover="mouseOver()" onmouseout="mouseOut()"
+/></a>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<h4>Exemplu cu proprietatea style</h4>
+<p id='pr1'>La clic pe urmatorul button se definesc la acest paragraf proprietatile CSS 'color' si 'font-size' folosind proprietatea JS 'style'.</p>
+<button id='btn1'>Set style</button>
+
+<script>
+var prg = document.getElementById('pr1');
+document.getElementById('btn1').addEventListener('click', (ev)=>{
+ prg.style.color ='#0000d0';
+ prg.style.fontSize ='20px';
+});
+
+</script>

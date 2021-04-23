@@ -1,0 +1,31 @@
+<h4>Exemplu querySelectorAll()</h4>
+
+<ul>
+    <li class='sites'>CoursesWeb.net</li>
+    <li class='sites'>MarPlo.net</li>
+    <li>GamV.eu.net</li>
+</ul>
+
+<div id='dv1'>
+ Cursuri Web Development - <span class='note'>querySelector si querySelectorAll</span>
+</div>
+<p style='background:#fbfbb0;'>Se preiau intr-un array tag-urile LI cu class='sites', si tag-urile cu class='note' din #dv1 (cu selctorul: 'li.sites, #dv1 .note'), apoi, la clic pe urmatorul buton se afiseaza la #resp continutul lor.</p>
+<button id='btn1'>Click</button>
+<blockquote id='resp'>#resp</blockquote>
+
+<script>
+//array cu tag-urile LI cu class='sites', si tag-urile cu class='note' din elementul cu id='dv1'
+var elms = document.querySelectorAll('li.sites, #dv1.note');
+var btn = document.querySelector('#btn1');
+btn.addEventListener('click', (ev)=>{
+ var re ='';
+
+ // parcurge array-ul elms si preia in re un sir cu continutul din fiecare element
+ for(var i=0; i<elms.length; i++) {
+ re += elms[i].innerHTML +'<br>';
+ }
+
+ //afiseaza sirul in #resp
+ document.getElementById('resp').innerHTML = re;
+});
+</script>

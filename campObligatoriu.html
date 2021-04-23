@@ -1,0 +1,39 @@
+<html>
+<head>
+<script type="text/javascript">
+
+function valideaza_obligatoriu(camp,txt)
+{
+    if (camp)
+    {
+        if (value==null||value=="")
+        {
+            alert(txt);
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+}
+function valideaza_formular(formular)
+{
+    if (formular)
+    {
+        if (valideaza_obligatoriu(email,"Campul Email este obligatoriu!")==false)
+        {
+            email.focus();
+            return false;
+        }
+    }
+}
+</script>
+</head>
+<body>
+<form action="submit.htm" onsubmit="return
+valideaza_formular(this)" method="post">
+Email: <input type="text" name="email" size="30">
+<input type="submit" value="Trimite">
+</form>
+</body>

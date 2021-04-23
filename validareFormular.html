@@ -1,0 +1,47 @@
+<i>- Numele si Parola trebuie sa contina doar numere, litere si liniute "-", "_".<br/>
+- Numele intre 3 si 18 caractere, Parola intre 7 si 18 caractere.</i>
+
+
+<form action="" method="post" onsubmit="return checkForm(this);">
+    <label for="nume1">Nume:</label>    
+        <input type="text" name="nume1" id="nume1" /><br/>
+    <label for="pass1">Parola:</label>  
+        <input type="password" name="pass1" id="pass1" /><br/>
+    <label for="email1">E-mail:</label> 
+        <input type="text" name="email1" id="email1" /><br/>
+    <input type="submit" name="fsubmit" id="fsubmit" value="Submit" />
+</form>
+
+<script type="text/javascript"><!--
+// RegExp care sa permite doar litere, numere si liniute "-", "_"
+var regx_chr = /^([a-zA-Z0-9_-]+)$/;
+var regx_mail = /^([a-zA-Z0-9]+[a-zA-Z0-9._%-]*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4})$/;    // RegExp pt. adresa e-mail
+
+// Functia care e apelata la "onsubmit"
+// preia campurile din formular, verifica /valideaza datele adaugate
+function checkForm(frm1) {
+  var fre = false;             // variabila ce va fi returnata de functie
+
+  // preluare casete formular
+  var nume1 = frm1.nume1;
+  var pass1 = frm1.pass1;
+  var email1 = frm1.email1;
+
+  // verificare valori (Nume, Parola, E-mail), daca sunt incorecte, returneaza alert si selecteaza casuta
+  if(nume1.value.length<3 || nume1.value.length>18 || nume1.value.search(regx_chr)==-1) {
+    alert('Numele trebuie sa contina intre 3 si 18 caractere \nNumere, Litere, "-" si "_"');
+    nume1.select();    // selecteaza casuta pt. Nume
+  }
+  else if(pass1.value.length<7 || pass1.value.length>18 || pass1.value.search(regx_chr)==-1) {
+    alert('Parola trebuie sa contina intre 7 si 18 caractere \nNumere, Litere, "-" si "_"');
+    pass1.select();    // selecteaza casuta pt. Parola
+  }
+  else if(email1.value.search(regx_mail)==-1) {
+    alert('Adaugati o adresa de e-mail corecta');
+    email1.select();    // selecteaza casuta pt. E-mail
+  }
+  else fre = true;
+
+  return fre;
+}
+--></script>

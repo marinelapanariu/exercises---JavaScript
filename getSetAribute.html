@@ -1,0 +1,14 @@
+<h4>Exemplu getAttribute() si setAttribute()</h4>
+
+<p id='pr1' style='background:#fbfbbb; font-size:18px;'>La clic pe urmatorul button se afiseaza la #resp valoarea atributului 'style' din acest paragraf (cu getAttribute() ), apoi defineste alta valoare la atributul 'style' cu setAttribute().</p>
+<button id='btn1'>Set style</button>
+<blockquote id='resp'>#resp</blockquote>
+
+<script>
+var prg = document.getElementById('pr1');
+document.getElementById('btn1').addEventListener('click', (ev)=>{
+ document.getElementById('resp').textContent ='style precedent: '+ prg.getAttribute('style');
+ prg.setAttribute('style', 'background:#dee0fe; font-weight:700;');
+});
+
+</script>

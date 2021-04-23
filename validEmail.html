@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript">
+function valideaza_email(camp,txt)
+{
+    if (camp)
+    {
+        apos=value.indexOf("@");
+        dotpos=value.lastIndexOf(".");
+        if (apos<1||dotpos-apos<2)
+            {
+                alert(txt);return false;
+            }
+        else {return true;}
+    }
+}
+function valideaza_formular(formular)
+{
+    if (formular)
+    {
+        if (valideaza_email(email,"Adresa e-mail nu este valida!")==false)
+        {
+            email.focus();return false;
+        }
+    }
+}
+</script>
+</head>
+<body>
+<form action="submit.htm" onsubmit="return
+valideaza_formular(this);" method="post">
+Email: <input type="text" name="email" size="30">
+<input type="submit" value="Trimite">
+</form>
+</body>
+</html>

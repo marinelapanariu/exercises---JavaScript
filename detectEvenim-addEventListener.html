@@ -1,0 +1,30 @@
+<h4>Exemplu cu addEventListener()</h4>
+<p>Miscati mouse-ul pe listele urmatoare.</p>
+<ul>
+    <li>WebDevelopment  </li>
+    <li>Cursuri gratuite  </li>
+    <li>Games  </li>
+</ul>
+
+<script>
+var elm_li = document.getElementsByTagName('li'); // preia toate tag-urile LI
+
+// functie executata la mouseenter
+function mEnter(ev){
+ // seteaza o culoare de fundal
+ ev.target.style.background ='#07da08';
+}
+
+// functie executata la mouseleave
+function mLeave(ev){
+ // sterge culoarea de fundal
+ this.style.background ='none';
+}
+
+// parcurge obiectul cu elementele LI
+for(var i=0; i<elm_li.length; i++){
+ // inregistrare mouseenter si mouseleave la fiecare LI
+ elm_li[i].addEventListener('mouseenter', mEnter);
+ elm_li[i].addEventListener('mouseleave', mLeave);
+}
+</script>
